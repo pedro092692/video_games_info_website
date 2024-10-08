@@ -17,8 +17,6 @@ class Token:
         self.url = (f'https://id.twitch.tv/oauth2/token?'
                     f'client_id={self.client_id}&client_secret={self.client_secret}&grant_type=client_credentials')
 
-        self.token = ''
-
 
 
     def get_token(self):
@@ -31,5 +29,4 @@ class Token:
             return False
         else:
             return result
-
 
