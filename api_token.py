@@ -18,7 +18,6 @@ class Token:
                     f'client_id={self.client_id}&client_secret={self.client_secret}&grant_type=client_credentials')
 
 
-
     def get_token(self):
         try:
             response = requests.post(url=self.url)

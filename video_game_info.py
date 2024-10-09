@@ -24,7 +24,9 @@ class VideoGame:
     def make_query(self, endpoint, fields, query='',  limit=''):
         url = self.base_url + f'/{endpoint}'
         try:
-            response = requests.post(url, headers=self.headers, data=f'fields {fields}; {query}; {limit}')
+            response = requests.post(url, headers=self.headers,
+                                     data=f'fields {fields}; {query};' + (f'limit {limit};' if limit else ''))
+
             response.raise_for_status()
         except requests.exceptions.HTTPError as e:
             print('Sorry there was an error: ', e)
@@ -55,8 +57,9 @@ class VideoGame:
         url = f'https://images.igdb.com/igdb/image/upload/t_{img_size}/{url_info}.jpg'
         return url
 
-    def search_game(self, query):
-        search_results = self.make_query(endpoint='search', fields='*', query=f'search "{query}"', limit=5)
+    def search_game(self, query, limit=''):
+        search_results = self.make_query(endpoint='games',
+                                         fields='name, cover.image_id', query=f'search "{query}"', limit=limit)
         return search_results
 
 
@@ -69,3 +72,7 @@ class VideoGame:
             if self.token['expires_in']  == 0:
                 new_token = self.token.get_token()
                 self.data = new_token
+
+
+video = VideoGame()
+print(video.search_game(query='sport'))
