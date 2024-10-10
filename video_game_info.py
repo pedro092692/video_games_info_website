@@ -62,6 +62,14 @@ class VideoGame:
                                          fields='name, cover.image_id', query=f'search "{query}"', limit=limit)
         return search_results
 
+    def popular_games(self):
+        popular_games = self.make_query(endpoint='popularity_primitives', fields='game_id,'
+                                                                                 'popularity_type,'
+                                                                                 'value; sort value desc',
+                                                                          query='where popularity_type = 2',
+                                                                          limit='7')
+        return [games['game_id'] for games in popular_games]
+
 
     def get_access_token(self):
         if not self.token_established:
@@ -75,4 +83,3 @@ class VideoGame:
 
 
 video = VideoGame()
-print(video.search_game(query='sport'))
