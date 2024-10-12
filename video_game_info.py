@@ -88,4 +88,3 @@ class VideoGame:
                 self.data = new_token
 
 
-video = VideoGame()
