@@ -1,5 +1,11 @@
 {% extends 'base.html' %}
 
+<!--css-->
+{% block css %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
+{% endblock css %}
+
+
 <!--tittle-->
 {% block title %}
     Game Report App
@@ -7,4 +13,22 @@
 
 <!--content-->
 {% block content %}
+    <div class="hero">
+        <div class="logo-description">
+            <img src="{{ url_for('static', filename='/assets/img/logo_default.svg') }}" alt="app logo">
+            <h4 class="h4 white">
+                Your one-stop site for all things video games. Find detailed information, ratings, and recommendations.
+            </h4>
+        </div>
+<!--        search input-->
+        <div class="search">
+            <form class="form" action="" autocomplete="off">
+                <input type="search" name="search" id="search" placeholder="search">
+            </form>
+        </div>
+<!--        most popular games-->
+        <div class="most-popular-games">
+            <h1 class="h1 white">Discover Most Popular Games</h1>
+        </div>
+    </div>
 {% endblock content %}

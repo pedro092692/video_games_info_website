@@ -1,0 +1,52 @@
+.hero{
+    width: 100%;
+    height: 100vh;
+    background-image: url('/static/assets/img/hero_background.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 160px 240px 0px 240px;
+
+}
+
+.hero .logo-description{
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.hero .logo-description h4{
+    width: 100%;
+}
+
+
+.hero .search{
+    display: flex;
+    width: 100%;
+}
+
+.form{
+    width: 100%;
+}
+
+.form input{
+    width: 100%;
+    padding: 16px 16px;
+    display: flex;
+    justify-content: space-between;
+    font-family: "inter", sans-serif;
+    font-size: 24px;
+    border-radius: 8px;
+    border: none;
+}
+
+.most-popular-games{
+    flex: 1;
+    display: flex;
+    padding: 32px 10px;
+    justify-content: center;
+    align-items: end;
+}

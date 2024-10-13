@@ -29,6 +29,15 @@
 
 /* colors */
 
-.red-600{}
-.red-400{}
-.red-200{}
+.white{
+    color: white;
+}
+
+/* covers */
+
+.game-cover{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: end;
+}
