@@ -71,7 +71,8 @@ class VideoGame:
 
         games_id = [games['game_id'] for games in popular_games]
         games_info = [self.make_query(endpoint='games', fields='name,'
-                                                               'cover.image_id',
+                                                               'cover.image_id,'
+                                                               'genres.name',
                                                         query=f'where id = {game_id}') for game_id in games_id]
 
         return games_info
