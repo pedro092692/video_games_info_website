@@ -3,6 +3,7 @@
 <!--css-->
 {% block css %}
 <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='css/game_cover.css') }}">
 {% endblock css %}
 
 
@@ -31,5 +32,10 @@
         <div class="most-popular-games">
             <h1 class="h1 white">Discover Most Popular Games</h1>
         </div>
+    </div>
+    <div class="popular-games">
+        {% for game_info in popular_games %}
+            {% include "includes/game_cover.html" %}
+        {% endfor %}
     </div>
 {% endblock content %}

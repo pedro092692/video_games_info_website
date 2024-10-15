@@ -8,7 +8,10 @@ video_games = VideoGame()
 
 @app.route('/', methods=['GET'])
 def home():
-    return render_template('index.html')
+    popular_games = video_games.popular_games()
+    for game_info in popular_games:
+        print(game_info[0]['genres'][0]['name'])
+    return render_template('index.html', popular_games=popular_games)
 
 
 
