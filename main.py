@@ -1,10 +1,13 @@
 from flask import Flask, render_template, url_for
 from video_game_info import VideoGame
+from turbo_flask import Turbo
 
 
 # setup app
 app = Flask(__name__)
 video_games = VideoGame()
+# turbo
+turbo = Turbo(app)
 
 @app.route('/', methods=['GET'])
 def home():
