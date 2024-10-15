@@ -6,7 +6,7 @@
     <!--css-->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,7 +27,8 @@
         {% block content %}
         {% endblock content %}
     </div>
-
+    <!--footer -->
+    {% include 'includes/footer.html' %}
     <!-- JS -->
     {% block js %}
         <script src="{{ url_for('static', filename='js/app.js') }}"></script>
