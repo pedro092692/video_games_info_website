@@ -25,6 +25,12 @@
 
 
 .hero .search{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.hero .search .form-container{
     position: relative;
     display: flex;
     width: 100%;
@@ -74,6 +80,38 @@ input:focus{
     justify-content: center;
 
 }
+
+.search-results{
+    width: 100%;
+    background: white;
+    border-radius: 0px 0px 8px 8px;
+    margin-top: -8px;
+    padding: 24px;
+}
+
+.search-results ul{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+ul a{
+    text-decoration: none;
+    color: inherit;
+}
+
+ul li{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+ul img{
+    height: 80px;
+    max-width: 60px;
+    object-fit: fill;
+}
+
 
 @media screen and (max-width: 900px){
     .hero{

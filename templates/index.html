@@ -23,10 +23,18 @@
         </div>
 <!--        search input-->
         <div class="search">
-            <form class="form" action="" autocomplete="off">
-                <input type="search" name="search" id="search" placeholder="search" autofocus>
-                <img class="search-icon" src="{{ url_for('static', filename='assets/img/Search.svg') }}" alt="search icon">
-            </form>
+            <div class="form-container">
+                <form class="form" action="{{ url_for('search') }}" method="POST" autocomplete="off" id="search_form">
+                    <input type="search" name="search" id="search" placeholder="search" autofocus>
+                    <img class="search-icon" src="{{ url_for('static', filename='assets/img/Search.svg') }}"
+                         alt="search icon">
+                </form>
+            </div>
+
+            <!-- search results games-->
+            <div id="results">
+
+            </div>
         </div>
 <!--        most popular games-->
         <div class="most-popular-games">

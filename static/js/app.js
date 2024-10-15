@@ -7,4 +7,19 @@ function add_cover_bg(){
     }
 }
 
+function search_game(){
+    try{
+        search_form = document.getElementById('search_form');
+        input_search = document.getElementById('search');
+        input_search.addEventListener('keyup', ()=>{
+            query = input_search.value;
+            console.log(query);
+            search_form.requestSubmit();
+        })
+    }catch{
+        //pass
+    }
+}
+
 add_cover_bg();
+search_game();

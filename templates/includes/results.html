@@ -1,0 +1,15 @@
+<div class="search-results">
+    <ul>
+        {% for game_info in content %}
+            {% if game_info['cover'] %}
+                <a href="">
+                    <li>
+                        <img src="https://images.igdb.com/igdb/image/upload/t_cover_big/{{game_info['cover']['image_id']}}.jpg"
+                             alt="game cover" height="80">
+                        <p class="p1">{{ game_info['name'] }}</p>
+                    </li>
+                </a>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</div>
