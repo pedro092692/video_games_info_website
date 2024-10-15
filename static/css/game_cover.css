@@ -6,6 +6,7 @@
     padding: 32px 16px;
     gap: 8px;
     width: 320px;
+    min-width: 320px;
     height: 520px;
     background: red;
     border-radius: 4px;

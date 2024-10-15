@@ -52,6 +52,7 @@
     padding: 32px 10px;
     justify-content: center;
     align-items: end;
+    text-align: center;
 }
 
 input:focus{
@@ -67,8 +68,22 @@ input:focus{
 
 .popular-games{
     display: flex;
+    flex-wrap: wrap;
     gap: 32px;
     padding: 16px 80px;
     justify-content: center;
 
+}
+
+@media screen and (max-width: 900px){
+    .hero{
+        gap: 24px;
+        padding: 56px 16px 0px 16px;
+    }
+
+    .hero .logo-description{
+        gap: 16px;
+        flex-direction: column;
+        align-items: start;
+    }
 }
