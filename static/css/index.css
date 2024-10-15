@@ -63,3 +63,11 @@ input:focus{
     bottom: 0px;
     top: 25%;
 }
+
+.popular-games{
+    display: flex;
+    gap: 32px;
+    padding: 16px 80px;
+    justify-content: center;
+
+}

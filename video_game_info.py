@@ -62,12 +62,12 @@ class VideoGame:
                                          fields='name, cover.image_id', query=f'search "{query}"', limit=limit)
         return search_results
 
-    def popular_games(self, category = '2'):
+    def popular_games(self, category = '2', limit=7):
         popular_games = self.make_query(endpoint='popularity_primitives', fields='game_id,'
                                                                                  'popularity_type,'
                                                                                  'value; sort value desc',
                                                                           query=f'where popularity_type = {category}',
-                                                                          limit='7')
+                                                                          limit=f'{limit}')
 
         games_id = [games['game_id'] for games in popular_games]
         games_info = [self.make_query(endpoint='games', fields='name,'
