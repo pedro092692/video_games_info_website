@@ -14,8 +14,6 @@ turbo = Turbo(app)
 @app.route('/', methods=['GET'])
 def home():
     popular_games = video_games.popular_games(limit=4)
-    # popular_games = []
-
     return render_template('index.html', popular_games=popular_games)
 
 @app.route('/search', methods=['GET', 'POST'])
@@ -28,7 +26,6 @@ def search():
                 turbo.update(render_template('/includes/results.html', content=results),
                              target="results")
             ])
-
     return redirect(url_for('home'))
 
 
@@ -40,4 +37,4 @@ def game(game_id):
 
 # run app
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)
