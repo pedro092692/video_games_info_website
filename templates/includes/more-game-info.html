@@ -1,0 +1,23 @@
+<div class="more-info">
+    <div class="summary">
+        <p class="p1 white">
+            {% if game_info['summary'] %}
+                {{ game_info['summary'] }}
+            {% else %}
+                No info for this game
+            {% endif %}
+        </p>
+        <div class="more-info-company">
+            <h3 class="h3 white">Developers</h3>
+            {% for company in game_info['involved_companies'] %}
+                <p class="p3 white">{{ company['company']['name'] }}</p>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="gallery">
+        {% for screenshot in game_info['screenshots'] %}
+            <img src="https://images.igdb.com/igdb/image/upload/t_720p/{{screenshot['image_id']}}.jpg"
+                 alt="game screenshot" width="230">
+        {% endfor %}
+    </div>
+</div>

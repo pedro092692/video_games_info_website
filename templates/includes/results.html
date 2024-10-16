@@ -2,7 +2,7 @@
     <ul>
         {% for game_info in content %}
             {% if game_info['cover'] %}
-                <a href="">
+                <a href="{{ url_for('game', game_id = game_info['id']) }}">
                     <li>
                         <img src="https://images.igdb.com/igdb/image/upload/t_cover_big/{{game_info['cover']['image_id']}}.jpg"
                              alt="game cover" height="80">

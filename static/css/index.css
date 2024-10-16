@@ -81,6 +81,10 @@ input:focus{
 
 }
 
+#results{
+    z-index: 10;
+}
+
 .search-results{
     width: 100%;
     background: white;

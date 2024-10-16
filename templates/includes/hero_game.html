@@ -1,0 +1,34 @@
+{% if game_info['screenshots'] %}
+    {% set ramdom_img = game_info['screenshots']|random %}
+{% else %}
+    {% set ramdom_img = 1234 %}
+{% endif %}
+<div class="hero-game" id="{{ ramdom_img['image_id'] }}">
+    {% include 'includes/game_cover_no_info.html' %}
+    <div class="game-info">
+        <div class="game-name">
+            <h1 class="h1 white">{{ game_info['name'] }}</h1>
+            {% if game_info['genres'] %}
+                <div class="game-genres">
+                    {% for game_genre in game_info['genres'] %}
+                        <h4 class="h4 white"> {{ "-" if loop.index != 1 }} {{ game_genre['name'] }}  </h4>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            {% if game_info['platforms'] %}
+                <div class="game-platforms">
+                    {% for game_platforms in game_info['platforms'] %}
+                        <p class="p3 white"> {{ "-" if loop.index != 1 }} {{ game_platforms['name'] }}  </p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        {% if game_info['aggregated_rating'] %}
+            <div class="game-rating">
+                <img src="{{ url_for('static', filename='assets/img/Thumb_up.svg') }}" alt="thumb up">
+                <h2 class="h2 white">{{ game_info['aggregated_rating']|round }}%</h2>
+            </div>
+        {% endif %}
+    </div>
+    <div class="overlay-hero"></div>
+</div>

@@ -18,7 +18,7 @@ def home():
 
     return render_template('index.html', popular_games=popular_games)
 
-@app.route('/search', methods=['POST'])
+@app.route('/search', methods=['GET', 'POST'])
 def search():
     query = request.form.get('search')
     if query != '':
@@ -32,7 +32,17 @@ def search():
     return redirect(url_for('home'))
 
 
+@app.route('/game/<game_id>', methods=['GET'])
+def game(game_id):
+    game_info = video_games.get_game_info(game_id=game_id)
+    return render_template('game.html', game_info=game_info[0])
 
+
+# add new filter to jinja2
+def add_value(value, addiction):
+    return value + addiction
+
+app.jinja_env.filters['add'] = add_value
 
 # run app
 if __name__ == "__main__":

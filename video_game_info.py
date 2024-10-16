@@ -44,7 +44,8 @@ class VideoGame:
                                                           'involved_companies.company.name,'
                                                           'platforms.name,'
                                                           'summary,'
-                                                          'language_supports.language.name',
+                                                          'artworks.image_id',
+                                                          # 'language_supports.language.name',
                                  query=f'where id = {game_id}')
 
 

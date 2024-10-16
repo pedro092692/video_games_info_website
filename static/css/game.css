@@ -1,0 +1,101 @@
+.hero-game{
+    position: relative;
+    width: 100%;
+    height:735px;
+    background: grey;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: end;
+    gap: 16px;
+    padding: 80px;
+
+}
+
+.game-cover{
+
+    z-index: 3;
+}
+
+.game-info{
+    flex: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    z-index: 3;
+}
+
+.game-info .game-name{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+
+}
+
+.game-name .game-genres, .game-platforms{
+    display: flex;
+    gap: 4px;
+}
+
+
+
+.game-info .game-rating{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+
+}
+
+.overlay-hero{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0, 0.6);
+    z-index: 1;
+}
+
+.more-info{
+    display: flex;
+    gap: 16px;
+    padding: 32px 80px;
+}
+
+.more-info .summary{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 571px;
+    min-width: 571px;
+
+}
+
+.summary .more-info-company{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.more-info .gallery{
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+}
+
+.gallery img{
+    width: 400px;
+    height: 240px;
+    border-radius: 4px;
+    object-fit: fill;
+}

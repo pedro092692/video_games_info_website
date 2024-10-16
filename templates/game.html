@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+<!--css-->
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/game.css') }}">
+{% endblock css %}
+
+
+<!--title-->
+{% block title %}
+    game name
+{% endblock title %}
+
+<!--content-->
+{% block content %}
+<!--    hero-->
+    {% include 'includes/hero_game.html' %}
+<!--more info-->
+    {% include 'includes/more-game-info.html' %}
+{% endblock content %}
