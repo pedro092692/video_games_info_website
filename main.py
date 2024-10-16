@@ -38,12 +38,6 @@ def game(game_id):
     return render_template('game.html', game_info=game_info[0])
 
 
-# add new filter to jinja2
-def add_value(value, addiction):
-    return value + addiction
-
-app.jinja_env.filters['add'] = add_value
-
 # run app
 if __name__ == "__main__":
     app.run(debug=True)

@@ -43,7 +43,9 @@
     </div>
     <div class="popular-games">
         {% for game_info in popular_games %}
-            {% include "includes/game_cover.html" %}
+            <a href="{{ url_for('game', game_id = game_info[0]['id']) }}">
+                {% include "includes/game_cover.html" %}
+            </a>
         {% endfor %}
     </div>
 {% endblock content %}

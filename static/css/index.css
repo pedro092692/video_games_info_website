@@ -81,6 +81,10 @@ input:focus{
 
 }
 
+.popular-games a{
+    text-decoration: none;
+}
+
 #results{
     z-index: 10;
 }

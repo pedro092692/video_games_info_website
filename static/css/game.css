@@ -14,7 +14,6 @@
 }
 
 .game-cover{
-
     z-index: 3;
 }
 
@@ -74,7 +73,6 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
-    width: 571px;
     min-width: 571px;
 
 }
@@ -98,4 +96,48 @@
     height: 240px;
     border-radius: 4px;
     object-fit: fill;
+}
+
+@media screen and (max-width: 1000px){
+    .hero-game{
+        flex-direction: column;
+        gap: 16px;
+        padding: 80px 16px;
+        align-items: center;
+        height: auto;
+    }
+
+   .game-cover{
+        width: 160px;
+        min-height: 520px;
+    }
+
+    .game-info{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 64px;
+    }
+
+    .game-info .game-name{
+        gap: 16px;
+    }
+
+    .game-name .game-genres, .game-platforms{
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .more-info{
+        flex-direction: column;
+        padding: 32px 16px;
+    }
+
+    .more-info .summary{
+        min-width: 100%;
+    }
+
+    .gallery img{
+        width: 100%;
+    }
 }
